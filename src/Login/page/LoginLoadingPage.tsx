@@ -10,7 +10,7 @@ const LoginLoadingPage: React.FC = () => {
   const queryParams = new URLSearchParams(location.search);
   const code = queryParams.get("code");
 
-  const navigation = useNavigate();
+  const navigate = useNavigate();
   const setToken = useSetRecoilState(tokenState);
 
   const handleLogin = async () => {
@@ -57,27 +57,24 @@ const LoginLoadingPage: React.FC = () => {
 
         if (result.code === "0000") {
           setToken(result.accessToken);
-          navigation("/main");
+          navigate("/main", { replace: true });
         } else {
           alert("로그인에 실패하였습니다.");
-          navigation("/");
+          navigate("/login", { replace: true });
         }
       }
     } catch (error) {
       alert("로그인에 실패하였습니다.");
-      navigation("/");
+      navigate("/login", { replace: true });
     }
   };
 
   useEffect(() => {
     handleLogin();
+    // eslint-disable-next-line
   }, [code, setToken]);
 
-  return (
-    <div>
-      <p>Loading...</p>
-    </div>
-  );
+  return <div></div>;
 };
 
 export default LoginLoadingPage;

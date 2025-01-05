@@ -1,24 +1,12 @@
 import React from "react";
-import { Button } from "@mantine/core";
 
-const generateCodeVerifier = () => {
-  const randomBytes = new Uint8Array(32);
-  crypto.getRandomValues(randomBytes);
-  return Array.from(randomBytes)
-    .map((byte) => String.fromCharCode((byte % 26) + 97)) // a-z 알파벳으로 변환
-    .join("");
-};
+import styles from "../style/login.module.css";
+import { Container } from "@mantine/core";
 
-const generateCodeChallenge = async (verifier: string) => {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(verifier);
-  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return btoa(String.fromCharCode(...hashArray))
-    .replace(/\+/g, "-")
-    .replace(/\//g, "_")
-    .replace(/=+$/, "");
-};
+import { generateCodeChallenge } from "../function/generateCodeChallenge";
+import { generateCodeVerifier } from "../function/generateCodeVerifiedr";
+
+import sign_up_button from "../../Utils/image/web_neutral_rd_SI@4x.png";
 
 const LoginPage: React.FC = () => {
   const googleLogin = async () => {
@@ -31,10 +19,26 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div>
-      <p>login</p>
-      <Button onClick={googleLogin}>구글 로그인</Button>
-    </div>
+    <>
+      <header className={styles.header}>
+        <Container className={styles.inner}>
+          <h1>Link Vault</h1>
+        </Container>
+      </header>
+      <div className={styles.main_box}>
+        <h1 className={styles.title}>Link Vault</h1>
+        <p className={styles.description}>
+          Safely and efficiently manage your important links
+        </p>
+
+        <img
+          alt="login button"
+          onClick={googleLogin}
+          className={styles.login_button}
+          src={sign_up_button}
+        />
+      </div>
+    </>
   );
 };
 
