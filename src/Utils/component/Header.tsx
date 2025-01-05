@@ -5,8 +5,11 @@ const Header: React.FC = () => {
   return (
     <header
       style={{
+        position: "fixed",
+        top: 0,
         height: "84px",
-        backgroundColor: "var(--mantine-color-body)",
+        width: "100%",
+        backgroundColor: "white",
         borderBottom:
           "1px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4))",
       }}

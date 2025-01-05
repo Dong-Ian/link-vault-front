@@ -5,3 +5,10 @@ export interface GetListFunctionProps extends TokenProps {
   page: number;
   pageSize: number;
 }
+
+export interface CreateReferenceFunctionProps extends TokenProps {
+  name: string;
+  url: string;
+  description: string;
+  category: string;
+}
