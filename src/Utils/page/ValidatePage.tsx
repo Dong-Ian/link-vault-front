@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
-import { tokenState } from "../../Utils/Atom/Atom";
+import { tokenState } from "../Atom/Atom";
 import GetListFunction from "../../Main/function/GetListFunction";
 
 const ValidatePage: React.FC = () => {
@@ -27,6 +27,7 @@ const ValidatePage: React.FC = () => {
     }
 
     setAccessToken("");
+    alert("로그인 정보가 유효하지 않습니다.\n다시 로그인 해주세요.");
     navigation("/login", { replace: true });
   };
 
