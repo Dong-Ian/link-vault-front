@@ -1,5 +1,5 @@
-import { Container } from "@mantine/core";
 import React from "react";
+import { Container } from "@mantine/core";
 
 const Header: React.FC = () => {
   return (
@@ -22,7 +22,7 @@ const Header: React.FC = () => {
           justifyContent: "center",
         }}
       >
-        <h1>Link Vault</h1>
+        <h1 style={{ fontWeight: "900" }}>Link Vault</h1>
       </Container>
     </header>
   );

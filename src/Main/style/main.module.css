@@ -7,20 +7,23 @@
   gap: 30px;
   margin: 120px auto;
 }
+
 .description {
   font-size: 90px;
   font-weight: 1000;
 }
+
 .input {
   width: 700px;
   input {
     height: 65px;
-    border-radius: 10px;
+    border-radius: 5px;
+    font-size: 22px;
   }
 }
 
 .button {
   width: 300px;
   height: 60px;
-  border-radius: 10px;
+  border-radius: 5px;
 }

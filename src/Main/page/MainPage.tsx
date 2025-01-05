@@ -7,7 +7,7 @@ import GetListFunction from "../function/GetListFunction";
 import CreateReferenceFunction from "../function/CreateReferenceFunction";
 
 import Header from "../../Utils/component/Header";
-import { Button, Input } from "@mantine/core";
+import { Button, CloseButton, Input } from "@mantine/core";
 
 const MainPage: React.FC = () => {
   const navigation = useNavigate();
@@ -59,9 +59,17 @@ const MainPage: React.FC = () => {
           value={link}
           onChange={(e) => setLink(e.target.value)}
           placeholder="링크를 입력하세요"
+          rightSectionPointerEvents="all"
+          rightSection={
+            <CloseButton
+              aria-label="Clear input"
+              onClick={() => setLink("")}
+              style={{ display: link ? undefined : "none" }}
+            />
+          }
         />
         <Button
-          color="rgb(150, 150, 150)"
+          color="rgb(188, 188, 188)"
           size="lg"
           className={styles.button}
           onClick={CreateReference}
