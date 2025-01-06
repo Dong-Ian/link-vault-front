@@ -20,4 +20,4 @@ Link Vault는 블로그 글 링크를 입력하면 AI가 해당 글을 세 문�
 
 ## 기술 스택
 
-    •	React, TypeScript, Mantine
+    • React, TypeScript, Mantine
