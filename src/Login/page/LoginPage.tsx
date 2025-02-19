@@ -6,7 +6,7 @@ import {
 } from "../function/generateCodeFunction";
 
 import sign_up_button from "../../Utils/image/web_neutral_rd_SI@4x.png";
-import Header from "../../Utils/component/Header";
+import Header from "../../components/molecules/Header";
 
 const LoginPage: React.FC = () => {
   const googleLogin = async () => {

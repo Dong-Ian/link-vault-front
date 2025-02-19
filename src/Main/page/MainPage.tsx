@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { tokenState } from "../../Utils/Atom/Atom";
 import styles from "../style/main.module.css";
 import GetListFunction from "../function/GetListFunction";
 import CreateReferenceFunction from "../function/CreateReferenceFunction";
 
-import Header from "../../Utils/component/Header";
-import { Button, CloseButton, Input } from "@mantine/core";
+import Header from "../../components/molecules/Header";
+import Input from "../../components/atoms/Input";
+import Button from "../../components/atoms/Button";
+import Card from "../../components/atoms/Card";
+import Typography from "../../components/atoms/Typography";
 
 const MainPage: React.FC = () => {
-  const navigation = useNavigate();
+  // const navigation = useNavigate();
   const accessToken = useRecoilValue(tokenState);
   const [link, setLink] = useState<string>("");
 
@@ -23,7 +26,7 @@ const MainPage: React.FC = () => {
     });
 
     if (result.code.endsWith("001")) {
-      navigation("/", { replace: true });
+      // navigation("/", { replace: true });
       return;
     }
 
@@ -50,33 +53,27 @@ const MainPage: React.FC = () => {
     <div>
       <Header />
       <div className={styles.main_box}>
-        <p className={styles.description}>
+        <Typography type="Head1">
           Manage Your Links Effortlessly with AI
-        </p>
+        </Typography>
         <Input
-          className={styles.input}
-          size="xl"
           value={link}
-          onChange={(e) => setLink(e.target.value)}
-          placeholder="링크를 입력하세요"
-          rightSectionPointerEvents="all"
-          rightSection={
-            <CloseButton
-              aria-label="Clear input"
-              onClick={() => setLink("")}
-              style={{ display: link ? undefined : "none" }}
-            />
-          }
+          onChange={(e) => setLink((e.target as HTMLInputElement).value)}
+          placeholder="요약하고자 하는 링크를 입력하세요"
+          className={styles.input}
         />
+
         <Button
-          color="rgb(188, 188, 188)"
-          size="lg"
-          className={styles.button}
+          variant="fill"
           onClick={CreateReference}
+          className={styles.button}
         >
           AI 요약하기
         </Button>
       </div>
+      <Card>
+        <p>hello card</p>
+      </Card>
     </div>
   );
 };

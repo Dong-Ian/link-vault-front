@@ -1,0 +1,16 @@
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  height: 84px;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid #52525200;
+}
+
+.container {
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
