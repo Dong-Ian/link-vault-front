@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useRecoilValue } from "recoil";
-import { tokenState } from "../stores/atom";
-import styles from "../features/home/styles/home.module.css";
-import createReference from "../features/home/services/createReference.service";
-import Header from "../components/molecules/Header";
-import Input from "../components/atoms/Input";
-import Button from "../components/atoms/Button";
-import Typography from "../components/atoms/Typography";
+import { tokenState } from "../../../stores/atom";
+import styles from "../styles/home.module.css";
+import createReference from "../services/createReference.service";
+import Header from "../../../components/molecules/Header";
+import Input from "../../../components/atoms/Input";
+import Button from "../../../components/atoms/Button";
+import Typography from "../../../components/atoms/Typography";
 
 const Home: React.FC = () => {
   const accessToken = useRecoilValue(tokenState);

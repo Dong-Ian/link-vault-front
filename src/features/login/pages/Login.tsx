@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "../features/login/styles/login.module.css";
+import styles from "../styles/login.module.css";
 import {
   generateCodeChallenge,
   generateCodeVerifier,
-} from "../features/login/services/generateCode.service";
+} from "../services/generateCode.service";
 
-import google from "../assets/images/google.png";
-import Header from "../components/molecules/Header";
+import google from "../../../assets/images/google.png";
+import Header from "../../../components/molecules/Header";
 
 const Login: React.FC = () => {
   const googleLogin = async () => {

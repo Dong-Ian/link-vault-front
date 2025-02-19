@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
-import { tokenState } from "../stores/atom";
-import login from "../features/login/services/login.service";
+import { tokenState } from "../../../stores/atom";
+import login from "../services/login.service";
 
 const LoginLoading: React.FC = () => {
   const location = useLocation();
