@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
-import { tokenState } from "../../Utils/Atom/Atom";
-import LoginFunction from "../function/LoginFunction";
+import { tokenState } from "../stores/atom";
+import login from "../features/login/services/login.service";
 
-const LoginLoadingPage: React.FC = () => {
+const LoginLoading: React.FC = () => {
   const location = useLocation();
 
   const queryParams = new URLSearchParams(location.search);
@@ -49,7 +49,7 @@ const LoginLoadingPage: React.FC = () => {
 
         const userInfo = await userInfoResponse.json();
 
-        const result = await LoginFunction({
+        const result = await login({
           email: userInfo.email,
           name: userInfo.name,
           image: userInfo.picture,
@@ -77,4 +77,4 @@ const LoginLoadingPage: React.FC = () => {
   return <div></div>;
 };
 
-export default LoginLoadingPage;
+export default LoginLoading;

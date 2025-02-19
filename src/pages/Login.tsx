@@ -1,14 +1,14 @@
 import React from "react";
-import styles from "../style/login.module.css";
+import styles from "../features/login/styles/login.module.css";
 import {
   generateCodeChallenge,
   generateCodeVerifier,
-} from "../function/generateCodeFunction";
+} from "../features/login/services/generateCode.service";
 
-import sign_up_button from "../../Utils/image/web_neutral_rd_SI@4x.png";
-import Header from "../../components/molecules/Header";
+import google from "../assets/images/google.png";
+import Header from "../components/molecules/Header";
 
-const LoginPage: React.FC = () => {
+const Login: React.FC = () => {
   const googleLogin = async () => {
     const codeVerifier = generateCodeVerifier();
     const codeChallenge = await generateCodeChallenge(codeVerifier);
@@ -31,11 +31,11 @@ const LoginPage: React.FC = () => {
           alt="login button"
           onClick={googleLogin}
           className={styles.login_button}
-          src={sign_up_button}
+          src={google}
         />
       </div>
     </>
   );
 };
 
-export default LoginPage;
+export default Login;

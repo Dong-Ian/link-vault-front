@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
-import { tokenState } from "../Atom/Atom";
-import GetListFunction from "../../Main/function/GetListFunction";
+import { tokenState } from "../stores/atom";
+import getList from "../services/getList.service";
 
-const ValidatePage: React.FC = () => {
+const Validate: React.FC = () => {
   const navigation = useNavigate();
   const [accessToken, setAccessToken] = useRecoilState(tokenState);
 
@@ -14,7 +14,7 @@ const ValidatePage: React.FC = () => {
       return;
     }
 
-    const result = await GetListFunction({
+    const result = await getList({
       accessToken,
       category: "default",
       page: 1,
@@ -39,4 +39,4 @@ const ValidatePage: React.FC = () => {
   return <div></div>;
 };
 
-export default ValidatePage;
+export default Validate;

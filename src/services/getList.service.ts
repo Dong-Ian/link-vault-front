@@ -1,6 +1,6 @@
-import { GetListFunctionProps } from "../type/main.type";
+import { GetListFunctionProps } from "../types/main.type";
 
-export default async function GetListFunction({
+export default async function getList({
   accessToken,
   category,
   page,

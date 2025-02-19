@@ -1,24 +1,23 @@
 import React, { useEffect, useState } from "react";
 // import { useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
-import { tokenState } from "../../Utils/Atom/Atom";
-import styles from "../style/main.module.css";
-import GetListFunction from "../function/GetListFunction";
-import CreateReferenceFunction from "../function/CreateReferenceFunction";
+import { tokenState } from "../stores/atom";
+import styles from "../styles/main.module.css";
+import getList from "../services/getList.service";
+import createReference from "../services/createReference.service";
+import Header from "../components/molecules/Header";
+import Input from "../components/atoms/Input";
+import Button from "../components/atoms/Button";
+import Card from "../components/atoms/Card";
+import Typography from "../components/atoms/Typography";
 
-import Header from "../../components/molecules/Header";
-import Input from "../../components/atoms/Input";
-import Button from "../../components/atoms/Button";
-import Card from "../../components/atoms/Card";
-import Typography from "../../components/atoms/Typography";
-
-const MainPage: React.FC = () => {
+const Main: React.FC = () => {
   // const navigation = useNavigate();
   const accessToken = useRecoilValue(tokenState);
   const [link, setLink] = useState<string>("");
 
-  const GetList = async () => {
-    const result = await GetListFunction({
+  const getListFunction = async () => {
+    const result = await getList({
       accessToken,
       category: "default",
       page: 1,
@@ -35,8 +34,8 @@ const MainPage: React.FC = () => {
     }
   };
 
-  const CreateReference = async () => {
-    const result = await CreateReferenceFunction({
+  const createReferenceFunction = async () => {
+    const result = await createReference({
       accessToken: accessToken,
       name: "example name",
       url: link,
@@ -46,7 +45,7 @@ const MainPage: React.FC = () => {
   };
 
   useEffect(() => {
-    GetList();
+    getListFunction();
   });
 
   return (
@@ -65,7 +64,7 @@ const MainPage: React.FC = () => {
 
         <Button
           variant="fill"
-          onClick={CreateReference}
+          onClick={createReferenceFunction}
           className={styles.button}
         >
           AI 요약하기
@@ -78,4 +77,4 @@ const MainPage: React.FC = () => {
   );
 };
 
-export default MainPage;
+export default Main;

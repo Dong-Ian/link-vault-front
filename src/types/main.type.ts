@@ -1,4 +1,4 @@
-import { TokenProps } from "../../Utils/type/utils.type";
+import { TokenProps } from "./utils.type";
 
 export interface GetListFunctionProps extends TokenProps {
   category: string;

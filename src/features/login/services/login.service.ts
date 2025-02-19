@@ -1,6 +1,6 @@
-import { LoginFunctionProps } from "../type/Login.type";
+import { LoginFunctionProps } from "../types/login.type";
 
-export default async function LoginFunction({
+export default async function login({
   email,
   name,
   image,

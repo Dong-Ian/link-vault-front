@@ -1,6 +1,6 @@
-import { CreateReferenceFunctionProps } from "../type/main.type";
+import { CreateReferenceFunctionProps } from "../types/main.type";
 
-export default async function CreateReferenceFunction({
+export default async function createReference({
   accessToken,
   name,
   url,

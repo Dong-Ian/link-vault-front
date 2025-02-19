@@ -1,18 +1,18 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import LoginPage from "./Login/page/LoginPage";
-import LoginLoadingPage from "./Login/page/LoginLoadingPage";
-import MainPage from "./Main/page/MainPage";
-import ValidatePage from "./Utils/page/ValidatePage";
+import LoginPage from "./pages/Login";
+import LoginLoading from "./pages/LoginLoading";
+import Main from "./pages/Main";
+import Validate from "./pages/Validate";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<ValidatePage />} />
+        <Route path="/" element={<Validate />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/loading" element={<LoginLoadingPage />} />
-        <Route path="/main" element={<MainPage />} />
+        <Route path="/loading" element={<LoginLoading />} />
+        <Route path="/main" element={<Main />} />
       </Routes>
     </Router>
   );
