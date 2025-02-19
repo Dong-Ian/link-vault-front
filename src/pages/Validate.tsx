@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { tokenState } from "../stores/atom";
-import getList from "../services/getList.service";
+import getList from "../features/storage/services/getList.service";
 
 const Validate: React.FC = () => {
   const navigation = useNavigate();

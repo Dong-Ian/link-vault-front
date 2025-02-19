@@ -1,4 +1,4 @@
-import { GetListFunctionProps } from "../types/main.type";
+import { GetListFunctionProps } from "../types/storage.type";
 
 export default async function getList({
   accessToken,
