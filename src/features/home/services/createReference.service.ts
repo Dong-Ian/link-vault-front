@@ -1,17 +1,14 @@
 import { CreateReferenceFunctionProps } from "../types/home.type";
 
 export default async function createReference({
-  accessToken,
   name,
   url,
   description,
   category,
 }: CreateReferenceFunctionProps) {
-  const result = await fetch(`${process.env.REACT_APP_API}/reference/list`, {
+  const result = await fetch(`${process.env.REACT_APP_API}/reference/create`, {
     method: "POST",
-    headers: {
-      Authorization: `Bearer ${accessToken}`,
-    },
+    credentials: "include",
     body: JSON.stringify({
       referenceName: name,
       referenceUrl: url,

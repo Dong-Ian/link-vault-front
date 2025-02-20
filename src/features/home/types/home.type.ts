@@ -1,6 +1,4 @@
-import { TokenProps } from "../../../types/utils.type";
-
-export interface CreateReferenceFunctionProps extends TokenProps {
+export interface CreateReferenceFunctionProps {
   name: string;
   url: string;
   description: string;
