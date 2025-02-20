@@ -11,7 +11,6 @@ const AuthMiddleware = ({ children }: { children: React.ReactNode }) => {
 
     if (result.code === "REC001") {
       // navigate("/");
-      console.log("no token");
     }
   };
 

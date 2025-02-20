@@ -7,6 +7,7 @@ export default async function login({
 }: LoginFunctionProps) {
   const result = await fetch(`${process.env.REACT_APP_API}/user/google/oauth`, {
     method: "POST",
+    credentials: "include",
     body: JSON.stringify({
       email: email,
       name: name,
