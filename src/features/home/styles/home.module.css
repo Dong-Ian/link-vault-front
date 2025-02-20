@@ -5,7 +5,7 @@
   align-items: center;
   width: 500px;
   gap: 30px;
-  margin: 120px auto;
+  margin: 120px auto -120px auto;
 }
 
 .description {

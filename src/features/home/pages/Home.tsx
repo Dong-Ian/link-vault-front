@@ -7,10 +7,12 @@ import Header from "../../../components/molecules/Header";
 import Input from "../../../components/atoms/Input";
 import Button from "../../../components/atoms/Button";
 import Typography from "../../../components/atoms/Typography";
+import Menu from "../../../components/molecules/Menu";
 
 const Home: React.FC = () => {
   const accessToken = useRecoilValue(tokenState);
   const [link, setLink] = useState<string>("");
+  const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
 
   const createReferenceFunction = async () => {
     const result = await createReference({
@@ -24,7 +26,8 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <Header />
+      <Header setIsMenuOpened={setIsMenuOpened} />
+      {isMenuOpened && <Menu setIsMenuOpened={setIsMenuOpened} />}
       <div className={styles.main_box}>
         <Typography type="Head1">
           Manage Your Links Effortlessly with AI
