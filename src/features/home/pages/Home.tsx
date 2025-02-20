@@ -3,10 +3,10 @@ import { useRecoilValue } from "recoil";
 import { tokenState } from "../../../stores/atom";
 import styles from "../styles/home.module.css";
 import createReference from "../services/createReference.service";
-import Header from "../../../components/molecules/Header";
 import Input from "../../../components/atoms/Input";
 import Button from "../../../components/atoms/Button";
 import Typography from "../../../components/atoms/Typography";
+import Header from "../../../components/molecules/Header";
 import Menu from "../../../components/organisms/Menu";
 
 const Home: React.FC = () => {
@@ -27,7 +27,7 @@ const Home: React.FC = () => {
   return (
     <div>
       <Header setIsMenuOpened={setIsMenuOpened} />
-      {isMenuOpened && <Menu setIsMenuOpened={setIsMenuOpened} />}
+      <Menu isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened} />
       <div className={styles.main_box}>
         <Typography type="Head1">
           Manage Your Links Effortlessly with AI
