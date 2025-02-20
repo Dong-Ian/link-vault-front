@@ -7,7 +7,7 @@ import Header from "../../../components/molecules/Header";
 import Input from "../../../components/atoms/Input";
 import Button from "../../../components/atoms/Button";
 import Typography from "../../../components/atoms/Typography";
-import Menu from "../../../components/molecules/Menu";
+import Menu from "../../../components/organisms/Menu";
 
 const Home: React.FC = () => {
   const accessToken = useRecoilValue(tokenState);

@@ -1,6 +1,6 @@
 import React from "react";
 import SideBar from "../atoms/SideBar";
-import styles from "./molecules.module.css";
+import styles from "./organisms.module.css";
 import CancelButton from "../atoms/CancelButton";
 
 interface MenuProps {
