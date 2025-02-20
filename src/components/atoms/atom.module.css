@@ -1,4 +1,8 @@
 /* Typography */
+.title {
+  font-size: clamp(2rem, 13vw, 80px);
+  font-weight: 1000;
+}
 .head1 {
   font-size: 80px;
   font-weight: 1000;
@@ -167,5 +171,5 @@
 }
 .cancelbutton:hover {
   background-color: rgb(221, 221, 221);
-  transition: 0.2s ease;
+  /* transition: 0.1s ease; */
 }

@@ -8,6 +8,7 @@ interface TypographyProps {
 }
 
 type TypoType =
+  | "Title"
   | "Head1"
   | "Head2"
   | "Head3"
@@ -26,7 +27,8 @@ const typoTypeMap: Record<
   TypoType,
   { tag: keyof JSX.IntrinsicElements; style: string }
 > = {
-  Head1: { tag: "p", style: styles.head1 },
+  Title: { tag: "p", style: styles.title },
+  Head1: { tag: "h1", style: styles.head1 },
   Head2: { tag: "h2", style: styles.head2 },
   Head3: { tag: "h3", style: styles.head3 },
   SubTitle1: { tag: "h4", style: styles.subtitle1 },

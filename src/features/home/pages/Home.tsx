@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import styles from "../styles/home.module.css";
 import createReference from "../services/createReference.service";
 import Input from "../../../components/atoms/Input";
@@ -7,7 +6,7 @@ import Button from "../../../components/atoms/Button";
 import Typography from "../../../components/atoms/Typography";
 import Header from "../../../components/molecules/Header";
 import Menu from "../../../components/organisms/Menu";
-import getList from "../../storage/services/getList.service";
+import { useResize } from "../../../hooks/useResize";
 
 const Home: React.FC = () => {
   const [link, setLink] = useState<string>("");
@@ -22,16 +21,15 @@ const Home: React.FC = () => {
     });
   };
 
-  getList();
-
   return (
-    <div>
+    <div className={styles.outer_box}>
       <Header setIsMenuOpened={setIsMenuOpened} />
       <Menu isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened} />
       <div className={styles.main_box}>
-        <Typography type="Head1">
+        <Typography type="Title">
           Manage Your Links Effortlessly with AI
         </Typography>
+
         <Input
           value={link}
           onChange={(e) => setLink((e.target as HTMLInputElement).value)}

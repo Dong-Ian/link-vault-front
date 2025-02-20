@@ -1,9 +1,13 @@
+.outer_box {
+  width: 100%;
+}
 .main_box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 500px;
+  max-width: 500px;
+  width: 90%;
   gap: 30px;
   margin: 120px auto -120px auto;
 }
@@ -14,12 +18,12 @@
 }
 
 .input {
-  width: 600px;
+  max-width: 700px;
+  width: 100%;
   border: 1.4px solid rgb(192, 192, 192);
   border-radius: 10px;
   transition: 0.1s ease;
 }
-
 .input:focus {
   border-color: rgb(110, 110, 110);
   outline: none;
@@ -27,6 +31,7 @@
 }
 
 .button {
-  width: 300px;
+  max-width: 300px;
+  width: 90%;
   height: 60px;
 }
