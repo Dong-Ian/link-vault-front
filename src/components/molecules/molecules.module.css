@@ -2,15 +2,28 @@
 .header {
   position: fixed;
   top: 0;
-  height: 84px;
+  height: 60px;
   width: 100%;
   background-color: white;
   border-bottom: 1px solid #52525200;
+  align-items: center;
 }
 
 .container {
-  height: 84px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.right_section {
+  position: absolute;
+  left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.menu_icon {
+  width: 30px;
+  height: 30px;
 }

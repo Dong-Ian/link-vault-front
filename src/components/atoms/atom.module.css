@@ -108,6 +108,7 @@
   outline: 3px solid rgb(140, 140, 140);
 }
 
+/* card */
 .card {
   background-color: white;
   border-radius: 12px;
@@ -128,4 +129,9 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+
+/* Icon */
+.icon {
+  cursor: pointer;
 }
