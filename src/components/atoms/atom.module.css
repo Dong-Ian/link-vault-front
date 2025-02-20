@@ -149,3 +149,23 @@
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
 }
+
+/* CancelButton */
+.cancelbutton {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+  > img {
+    width: 20px;
+    height: 20px;
+  }
+}
+.cancelbutton:hover {
+  background-color: rgb(221, 221, 221);
+  transition: 0.2s ease;
+}

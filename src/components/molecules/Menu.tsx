@@ -1,6 +1,7 @@
 import React from "react";
 import SideBar from "../atoms/SideBar";
 import styles from "./molecules.module.css";
+import CancelButton from "../atoms/CancelButton";
 
 interface MenuProps {
   setIsMenuOpened: React.Dispatch<React.SetStateAction<boolean>>;
@@ -9,11 +10,10 @@ interface MenuProps {
 const Menu: React.FC<MenuProps> = ({ setIsMenuOpened }) => {
   return (
     <>
-      <div
-        className={styles.overlay}
-        onClick={() => setIsMenuOpened(false)}
-      ></div>
-      <SideBar className={styles.menu}></SideBar>
+      <div className={styles.overlay} onClick={() => setIsMenuOpened(false)} />
+      <SideBar className={styles.menu}>
+        <CancelButton setIsMenuOpened={setIsMenuOpened} />
+      </SideBar>
     </>
   );
 };
