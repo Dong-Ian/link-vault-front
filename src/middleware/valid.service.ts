@@ -5,6 +5,6 @@ export default async function valid() {
   });
 
   const res = await result.json();
-  console.log(res);
+
   return res;
 }
