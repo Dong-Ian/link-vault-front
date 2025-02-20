@@ -7,6 +7,8 @@ import {
 
 import google from "../../../assets/images/google.png";
 import Header from "../../../components/molecules/Header";
+import Typography from "../../../components/atoms/Typography";
+import Image from "../../../components/atoms/Image";
 
 const Login: React.FC = () => {
   const googleLogin = async () => {
@@ -22,12 +24,12 @@ const Login: React.FC = () => {
     <>
       <Header />
       <div className={styles.main_box}>
-        <h1 className={styles.title}>Link Vault</h1>
-        <p className={styles.description}>
+        <Typography type="Head1">Link Vault</Typography>
+        <Typography type="Head2" className={styles.description}>
           Safely and efficiently manage your important links
-        </p>
+        </Typography>
 
-        <img
+        <Image
           alt="login button"
           onClick={googleLogin}
           className={styles.login_button}

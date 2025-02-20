@@ -1,23 +1,23 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useRecoilValue, useResetRecoilState } from "recoil";
-import { tokenState } from "../stores/atom";
+
+import valid from "./valid.service";
 
 const AuthMiddleware = ({ children }: { children: React.ReactNode }) => {
   const navigate = useNavigate();
-  const accessToken = useRecoilValue(tokenState);
-  const resetToken = useResetRecoilState(tokenState);
+
+  const validateUser = async () => {
+    const result = await valid();
+
+    if (result.code === "REC001") {
+      // navigate("/");
+      console.log("no token");
+    }
+  };
 
   useEffect(() => {
-    const validateUser = async () => {
-      if (!accessToken) {
-        navigate("/", { replace: true });
-        return;
-      }
-    };
-
     validateUser();
-  }, [accessToken, navigate, resetToken]);
+  }, []);
 
   return <>{children}</>;
 };
