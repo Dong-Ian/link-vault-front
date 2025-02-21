@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./organisms.module.css";
 import SideBar from "../atoms/SideBar";
 import CancelButton from "../atoms/CancelButton";
@@ -12,6 +13,8 @@ interface MenuProps {
 }
 
 const Menu: React.FC<MenuProps> = ({ isMenuOpened, setIsMenuOpened }) => {
+  const navigate = useNavigate();
+
   return (
     <>
       <div
@@ -23,10 +26,18 @@ const Menu: React.FC<MenuProps> = ({ isMenuOpened, setIsMenuOpened }) => {
           <CancelButton setIsMenuOpened={setIsMenuOpened} />
         </div>
         <div>
-          <MenuItem iconSrc={house_icon} alt="exic">
+          <MenuItem
+            iconSrc={house_icon}
+            alt="exic"
+            onClick={() => navigate("/main")}
+          >
             Home
           </MenuItem>
-          <MenuItem iconSrc={folder_icon} alt="exic">
+          <MenuItem
+            iconSrc={folder_icon}
+            alt="exic"
+            onClick={() => navigate("/storage")}
+          >
             Storage
           </MenuItem>
         </div>

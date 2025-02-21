@@ -4,6 +4,7 @@ import LoginPage from "./features/login/pages/Login";
 import LoginLoading from "./features/login/pages/LoginLoading";
 import Home from "./features/home/pages/Home";
 import AuthMiddleware from "./middleware/authMiddleware";
+import Storage from "./features/storage/pages/Storage";
 
 function App() {
   return (
@@ -16,6 +17,14 @@ function App() {
           element={
             <AuthMiddleware>
               <Home />
+            </AuthMiddleware>
+          }
+        />
+        <Route
+          path="/storage"
+          element={
+            <AuthMiddleware>
+              <Storage />
             </AuthMiddleware>
           }
         />
