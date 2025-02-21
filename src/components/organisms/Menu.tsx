@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./organisms.module.css";
 import SideBar from "../atoms/SideBar";
 import CancelButton from "../atoms/CancelButton";
@@ -14,6 +14,16 @@ interface MenuProps {
 
 const Menu: React.FC<MenuProps> = ({ isMenuOpened, setIsMenuOpened }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigation = (path: string) => {
+    if (location.pathname === path) {
+      window.scrollTo(0, 0);
+      setIsMenuOpened(false);
+    } else {
+      navigate(path);
+    }
+  };
 
   return (
     <>
@@ -29,14 +39,14 @@ const Menu: React.FC<MenuProps> = ({ isMenuOpened, setIsMenuOpened }) => {
           <MenuItem
             iconSrc={house_icon}
             alt="exic"
-            onClick={() => navigate("/main")}
+            onClick={() => handleNavigation("/main")}
           >
             Home
           </MenuItem>
           <MenuItem
             iconSrc={folder_icon}
             alt="exic"
-            onClick={() => navigate("/storage")}
+            onClick={() => handleNavigation("/storage")}
           >
             Storage
           </MenuItem>
