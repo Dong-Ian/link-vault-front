@@ -6,7 +6,6 @@ import Button from "../../../components/atoms/Button";
 import Typography from "../../../components/atoms/Typography";
 import Header from "../../../components/molecules/Header";
 import Menu from "../../../components/organisms/Menu";
-import { useResize } from "../../../hooks/useResize";
 
 const Home: React.FC = () => {
   const [link, setLink] = useState<string>("");
