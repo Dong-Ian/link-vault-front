@@ -10,7 +10,7 @@ const AuthMiddleware = ({ children }: { children: React.ReactNode }) => {
     const result = await valid();
 
     if (result.code === "REC001") {
-      // navigate("/");
+      navigate("/");
     }
   };
 
