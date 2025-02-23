@@ -28,7 +28,7 @@ const Bubble = React.memo(({ size, x, y, delay }: (typeof bubbles)[0]) => {
         ],
       }}
       transition={{
-        duration: 8,
+        duration: 12,
         repeat: Infinity,
         repeatType: "reverse",
         ease: "easeInOut",
