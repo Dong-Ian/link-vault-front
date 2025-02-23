@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "../styles/storage.module.css";
 import Header from "../../../components/molecules/Header";
 import Menu from "../../../components/organisms/Menu";
 import PostBox from "../components/PostBox";
 import getList from "../services/getList.service";
 import { ListInterface } from "../types/storage.type";
-import { useNavigate } from "react-router-dom";
 
 const Storage: React.FC = () => {
   const navigate = useNavigate();

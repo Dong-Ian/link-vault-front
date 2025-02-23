@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./molecules.module.css";
 import Typography from "../atoms/Typography";
 import Container from "../atoms/Container";
@@ -10,6 +11,8 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ setIsMenuOpened }) => {
+  const navigate = useNavigate();
+
   return (
     <header className={styles.header}>
       <Container className={styles.container}>
@@ -23,7 +26,11 @@ const Header: React.FC<HeaderProps> = ({ setIsMenuOpened }) => {
             />
           </div>
         )}
-        <Typography type="Head2">Link Vault</Typography>
+        <div onClick={() => navigate("/main")}>
+          <Typography className={styles.title} type="Head2">
+            Link Vault
+          </Typography>
+        </div>
       </Container>
     </header>
   );
