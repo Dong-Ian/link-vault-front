@@ -21,7 +21,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <>
+    <div className={styles.outer_box}>
       <Header />
       <div className={styles.main_box}>
         <Typography type="Head1">Link Vault</Typography>
@@ -36,7 +36,7 @@ const Login: React.FC = () => {
           src={google}
         />
       </div>
-    </>
+    </div>
   );
 };
 
