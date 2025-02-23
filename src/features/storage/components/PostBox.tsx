@@ -2,7 +2,12 @@ import React from "react";
 import { ListInterface } from "../types/storage.type";
 import Card from "../../../components/atoms/Card";
 
-const PostBox: React.FC<{ post: ListInterface }> = ({ post }) => {
+interface PostBoxProps {
+  post: ListInterface;
+  onClick: () => void;
+}
+
+const PostBox: React.FC<PostBoxProps> = ({ post, onClick }) => {
   const {
     referenceSeq,
     referenceUrl,
@@ -13,8 +18,8 @@ const PostBox: React.FC<{ post: ListInterface }> = ({ post }) => {
   } = post;
 
   return (
-    <Card>
-      <a href={referenceUrl}>{referenceUrl}</a>
+    <Card onClick={onClick}>
+      <a href={referenceUrl}>{decodeURIComponent(referenceUrl)}</a>
       <p>{createdAt}</p>
     </Card>
   );

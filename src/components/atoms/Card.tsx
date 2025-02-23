@@ -5,10 +5,15 @@ import classNames from "classnames";
 interface CardProps {
   children?: ReactNode;
   className?: string;
+  onClick?: () => void;
 }
 
-const Card: React.FC<CardProps> = ({ children, className }) => {
-  return <div className={classNames(styles.card, className)}>{children}</div>;
+const Card: React.FC<CardProps> = ({ children, className, onClick }) => {
+  return (
+    <div onClick={onClick} className={classNames(styles.card, className)}>
+      {children}
+    </div>
+  );
 };
 
 export default Card;
