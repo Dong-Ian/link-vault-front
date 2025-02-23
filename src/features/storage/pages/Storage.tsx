@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import styles from "../styles/storage.module.css";
 import Header from "../../../components/molecules/Header";
 import Menu from "../../../components/organisms/Menu";
+import PostBox from "../components/PostBox";
 import getList from "../services/getList.service";
 import { ListInterface } from "../types/storage.type";
 
@@ -24,9 +26,14 @@ const Storage: React.FC = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.outer_box}>
       <Header setIsMenuOpened={setIsMenuOpened} />
       <Menu isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened} />
+      <div className={styles.main_box}>
+        {list.map((post) => (
+          <PostBox key={post.referenceSeq} post={post} />
+        ))}
+      </div>
     </div>
   );
 };
