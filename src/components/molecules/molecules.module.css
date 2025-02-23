@@ -7,6 +7,7 @@
   background-color: white;
   border-bottom: 1px solid #52525200;
   align-items: center;
+  z-index: 10;
 }
 
 .container {
