@@ -6,6 +6,7 @@ import Button from "../../../components/atoms/Button";
 import Typography from "../../../components/atoms/Typography";
 import Header from "../../../components/molecules/Header";
 import Menu from "../../../components/organisms/Menu";
+import Bubbles from "../../../components/atoms/Bubbles";
 
 const Home: React.FC = () => {
   const [link, setLink] = useState<string>("");
@@ -19,8 +20,10 @@ const Home: React.FC = () => {
 
   return (
     <div className={styles.outer_box}>
+      <Bubbles />
       <Header setIsMenuOpened={setIsMenuOpened} />
       <Menu isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened} />
+
       <div className={styles.main_box}>
         <Typography type="Title">
           Manage Your Links Effortlessly with AI
