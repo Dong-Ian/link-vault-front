@@ -13,10 +13,7 @@ const Home: React.FC = () => {
 
   const createReferenceFunction = async () => {
     const result = await createReference({
-      name: "example name",
       url: link,
-      description: "example description",
-      category: "default",
     });
   };
 
